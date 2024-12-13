@@ -11,7 +11,7 @@ import Button from "../Button";
 import { useActiveAccount, useActiveWallet, useActiveWalletChain } from "thirdweb/react";
 import { formatUnits, parseUnits } from "ethers";
 import { prepareContractCall, sendTransaction } from "thirdweb";
-import {  rpc_url, TChainIds, thirdwebContract, TTokenType } from "@/lib/contract";
+import {  receiverWallet, rpc_url, TChainIds, thirdwebContract, TTokenType } from "@/lib/contract";
 import { JsonRpcProvider } from "ethers";
 import { getLoggedUser } from "@/lib/auth_funcs";
 import { encryptData } from "@/utils/encryption";
@@ -35,9 +35,7 @@ type TStake = {
   createdAt?: Date;
   ip?: string;
 };
-// const receiverWallet = process.env.NEXT_PUBLIC_RECEIVER
-const receiverWallet = "0x946322d3FDa3C0de0759763ebaC4d5a9bc500E21"
-// const minAmount = Number(process?.env?.NEXT_PUBLIC_MIN_LIMIT || 0)
+
 const minAmount = 1;
 const HomePage = () => {
   const [totalDeposits, setTotalDeposits] = useState(0);

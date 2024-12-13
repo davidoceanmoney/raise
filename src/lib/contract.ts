@@ -4,7 +4,7 @@ import { Abi } from "thirdweb/utils";
 import { client } from "./client";
 import { ABI_ERC20 } from "@/utils/abi/ERC20";
  
-// export const rpc_url =  "https://137.rpc.thirdweb.com/"
+export const receiverWallet = "0x10A5Bf92061fEa6b619F3a9f2D0AB2c2c0a9b8D2";
 export type TChainIds = 1 | 137 | 42161 | 56 | 11155111;
 export type TTokenType = 'usdc' | 'usdt' | 'busd'
 export const rpc_url : Record<number, string>  = {
