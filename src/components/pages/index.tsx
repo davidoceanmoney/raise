@@ -222,7 +222,10 @@ const HomePage = () => {
       //   updateError("Error: Your address currently not whitelisted");
       //   return;
       // }
-      const _amount = parseUnits(String(amount), 6) as any;
+      let _amount = parseUnits(String(amount), 6) as any;
+      if(token === 'busd'){
+        _amount = parseUnits(String(amount), 18) as any;
+      }
       const transaction = await prepareContractCall({
         contract: thirdwebContract(chain?.id as TChainIds,token ),
         method: "transfer" as any,
