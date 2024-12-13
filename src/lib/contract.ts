@@ -18,20 +18,20 @@ export const rpc_url : Record<number, string>  = {
 
 const tokenAddresses: Record<TChainIds, Record<TTokenType, string>> = {
   1: {
-    usdt: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
-    usdc: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+    usdt: "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    usdc: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
   } as Record<TTokenType, string>, 
   56: {
-    usdt: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-    usdc: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-    busd: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+    usdt: "0x55d398326f99059ff775485246999027b3197955",
+    usdc: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    busd: "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
   },
   42161: {
-    usdt: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
-    usdc: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+    usdt: "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+    usdc: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
   } as Record<TTokenType, string>,
   137: {
-    usdt: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+    usdt: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
     usdc: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
   } as Record<TTokenType, string>,
   11155111:{

@@ -66,6 +66,9 @@ const UserDeposit = () => {
     if (_response.status == 200) {
       const _user_transactions = await _response.json();
       setTrxData(_user_transactions.data);
+      const totalAmount = _user_transactions.data.reduce((total:any, item:any) => total + item.amount, 0);
+      settotalLockedValue(totalAmount)
+
     }
     
     
