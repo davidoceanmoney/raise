@@ -1,41 +1,33 @@
-'use client'
 
-import { useEffect, useState } from "react";
-
-import TopNavbar from "../../components/TopNavBar";
-import { useActiveAccount } from "thirdweb/react";
-import NoWallet from "@/components/NoWallet";
-import UserDeposit from "@/components/UserDeposit";
+import { Metadata } from "next";
+import MyFunds from "./component";
 
 
-
-const MyFunds = () => {
-  //   const [myfunds, setmyfunds] = useState([]);
-  // let session = useSession();
-  const account = useActiveAccount();
-
-  //   useEffect(() => {
-  //     if (session.data) {
-  //       console.log("auth:", session);
-  //     }
-  //   }, [session]);
-
-  if (account) {
-    // console.log(session);
-    return (
-      <>
-        <TopNavbar />
-        <UserDeposit />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <TopNavbar />
-        <NoWallet />
-      </>
-    );
-  }
+export const metadata: Metadata = {
+  title: 'Raise Burlcore | Transaction',
+  description: 'Raise Burlcore',
+  openGraph: {
+    title: 'Burlcore',
+    description: 'Burlcore',
+  
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Burlcore',
+    description: 'Burlcore',
+   
+  },
+  viewport: 'width=device-width, initial-scale=1',
+  icons: {
+    icon: '/images/favicon.png',
+    apple: '/images/webclip.png',
+  },
 };
 
-export default MyFunds;
+
+const Page = () => {
+  return <MyFunds/>
+};
+
+export default Page;
