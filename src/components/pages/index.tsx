@@ -307,7 +307,7 @@ const HomePage = () => {
               <p className="flex justify-center  font-800 text-4xl text-gray-100 pt-3">
                 {isNaN(totalDeposits) ? 0 : currencyFormat(totalDeposits)}
               </p>
-              <CountDown/>
+              {/* <CountDown/> */}
               <p className="flex justify-center  font-400 text-12 text-white pt-8">
                 AMOUNT
               </p>
