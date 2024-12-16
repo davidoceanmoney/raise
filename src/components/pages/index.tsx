@@ -128,9 +128,9 @@ const HomePage = () => {
               const { from, to, value } = parsedLog.args;
               _from = from;
               _to = to;
-              _amount = Number(formatUnits(value, 6));
+              _amount = value;
               
-              const amount = formatUnits(value, 6); 
+              // const amount = formatUnits(value, 6); 
             }
           }); 
         //   setLoading(false);
@@ -235,7 +235,8 @@ const HomePage = () => {
         account,
       });
       const _confirmation = await waitForTransaction(transactionHash);
-
+      // const _confirmedAmoutn = chain.id == 56 ? formatUnits(_confirmation?.amount || '0', 6) : 
+      const _confirmedAmount = formatUnits(_confirmation?.amount || '0', chain.id == 56  ? 18 : 6) 
       await addStaking({
         jti: _userAddress.jti,
         payloadData: {
@@ -245,7 +246,7 @@ const HomePage = () => {
           withdraw: false,
           status: _confirmation?.status,
           token: `${chain?.nativeCurrency?.symbol?.toLowerCase()}_${token}`,
-          amount: _confirmation?.amount,
+          amount: parseFloat(_confirmedAmount),
         },
       });
       // getTotalDeposit();
@@ -395,7 +396,7 @@ const HomePage = () => {
                 >
                   <span>STAKE BUSD</span>
                   {isLoading.busd ? (
-                    <RefreshCcw className="animate-spin text-black absolute right-5 top-3.5" />
+                    <RefreshCcw className="animate-spin text-white absolute right-5 top-3.5" />
                   ) : null}
                 </Button>
               </div> : null}
@@ -408,7 +409,7 @@ const HomePage = () => {
                 >
                   <span>STAKE USDT</span>
                   {isLoading.usdt ? (
-                    <RefreshCcw className="animate-spin text-black absolute right-5 top-3.5" />
+                    <RefreshCcw className="animate-spin text-white absolute right-5 top-3.5" />
                   ) : null}
                 </Button>
               </div>
@@ -422,7 +423,7 @@ const HomePage = () => {
                 >
                   <span>STAKE USDC</span>
                   {isLoading.usdc ? (
-                    <RefreshCcw className="animate-spin text-black absolute right-5 top-3.5" />
+                    <RefreshCcw className="animate-spin text-white absolute right-5 top-3.5" />
                   ) : null}
                 </Button>
               </div>
