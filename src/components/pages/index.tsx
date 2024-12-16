@@ -255,7 +255,12 @@ const HomePage = () => {
       updateError(`Success: ${_confirmedAmount} ${token.toUpperCase()} staked`, false);
  
     } catch (error: any) { 
-      updateError(`Error: ${error?.message || "Something went wrong!"} `);
+      if(error?.message){
+        console.log({error})
+        updateError(`${String(error?.message).split('contract')[0]} `);
+      }else{
+        updateError(`Error: ${"Something went wrong!"} `);
+      }
       uploadLoading(token,false);
       //   }
       console.log({ error });
@@ -379,7 +384,7 @@ const HomePage = () => {
              </div>
               <div className=" px-2 mx-auto max-w-sm">
                 <p
-                  className={`h-4 flex items-center ${
+                  className={`h-4 flex items-center leading-3 ${
                     status.isError ? "text-red-100" : "text-green-100"
                   } text-[14px]`}
                 >
