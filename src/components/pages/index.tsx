@@ -252,7 +252,7 @@ const HomePage = () => {
       // getTotalDeposit();
       // getUserTransaction(account.address);
       uploadLoading(token,false);
-      updateError(`Success: ${_confirmation?.amount} ${token.toUpperCase()} staked`, false);
+      updateError(`Success: ${_confirmedAmount} ${token.toUpperCase()} staked`, false);
  
     } catch (error: any) { 
       updateError(`Error: ${error?.message || "Something went wrong!"} `);
