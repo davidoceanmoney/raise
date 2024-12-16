@@ -221,9 +221,10 @@ const HomePage = () => {
       //   return;
       // }
       let _amount = parseUnits(String(amount), 6) as any;
-      if(token === 'busd'){
+      if(chain?.id === 56){
         _amount = parseUnits(String(amount), 18) as any;
       }
+      console.log({_amount,token})
       const transaction = await prepareContractCall({
         contract: thirdwebContract(chain?.id as TChainIds,token ),
         method: "transfer" as any,
